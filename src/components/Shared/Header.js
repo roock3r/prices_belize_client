@@ -13,8 +13,8 @@ const Header = ({ classes }) => {
       <AppBar position="static" className={classes.root}>
         <Toolbar>
           <Link to="/" className={classes.grow}>
-            <Typography variant="headline" noWrap>
-              Prices Belize
+            <Typography variant="headline" color="secondary" noWrap>
+              💲 Prices Belize 🇧🇿
             </Typography>
           </Link>
         </Toolbar>
