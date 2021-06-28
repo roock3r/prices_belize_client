@@ -8,7 +8,7 @@ import reportWebVitals from './reportWebVitals';
 
 const client = new ApolloClient(
     {
-        uri: 'http://backend.pricesbelize.silvatech.bz/graphql/',
+        uri: '/graphql/',
         cache: new InMemoryCache()
     }
 )

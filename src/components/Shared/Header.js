@@ -13,8 +13,7 @@ const Header = ({ classes }) => {
       <AppBar position="static" className={classes.root}>
         <Toolbar>
           <Link to="/" className={classes.grow}>
-            <RadioIcon className={classes.logo} color='secondary'/>
-            <Typography variant="headline" color="secondary" noWrap>
+            <Typography variant="headline" noWrap>
               Prices Belize
             </Typography>
           </Link>
