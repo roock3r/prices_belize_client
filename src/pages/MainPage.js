@@ -3,7 +3,8 @@ import '../css/Main.css';
 
 import {Query} from "react-apollo";
 import {gql} from "apollo-boost";
-import {Box, LinearProgress} from "@material-ui/core";
+import {Container, LinearProgress} from "@material-ui/core";
+import Typography from '@material-ui/core/Typography';
 import ArticleList from "../components/Article/ArticleList";
 
 
@@ -18,34 +19,26 @@ function Main() {
                     const articles = data.articles
                     return (
                         <div className="Main">
-                            <header className="Main-header">
-                                <Box component="span" m={1}/>
+                            <Container maxWidth="lg">
+                                <Typography variant="h1" component="h2" gutterBottom>
+                                   Welcome to Prices Belize
+                                </Typography>
                                 <img src={dollar} className="Main-logo" alt="logo"/>
-                                {/*<p>*/}
-                                {/*    Edit <code>src/App.js</code> and save to reload.*/}
-                                {/*</p>*/}
-                                {/*<a*/}
-                                {/*    className="Main-link"*/}
-                                {/*    href="https://reactjs.org"*/}
-                                {/*    target="_blank"*/}
-                                {/*    rel="noopener noreferrer"*/}
-                                {/*>*/}
-                                {/*    Learn React*/}
-                                {/*</a>*/}
-                                {/*<div>{JSON.stringify(data)}</div>*/}
-                                    <Box component="span" m={5}/>
-                                    <ArticleList articles={articles}/>
-                            </header>
+                                <Typography variant="h3" gutterBottom>
+                                    Find the lastest prices of essential goods and servies we use everyday.
+                                </Typography>
+                                <ArticleList articles={articles}/>
+                            </Container>
                         </div>
-                )
+                    )
                 }}
-                </Query>
+        </Query>
 
-                )
-                    ;
-                }
+    )
+        ;
+}
 
-                export const GET_ARTICLES_QUERY = gql`
+export const GET_ARTICLES_QUERY = gql`
 query{
   articles{
     id
@@ -62,7 +55,7 @@ query{
 }
 `
 
-                export default Main;
+export default Main;
 
 
 

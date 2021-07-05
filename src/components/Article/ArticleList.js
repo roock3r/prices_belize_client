@@ -11,9 +11,8 @@ import ExpansionPanelSummary from "@material-ui/core/ExpansionPanelSummary";
 import ExpansionPanelActions from "@material-ui/core/ExpansionPanelActions";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import Chip from '@material-ui/core/Chip';
-import {Avatar, ListItemIcon} from "@material-ui/core";
+import {Avatar} from "@material-ui/core";
 import DoneIcon from '@material-ui/icons/Done';
-import SendIcon from '@material-ui/icons/Send';
 
 
 // import AudioPlayer from "../Shared/AudioPlayer";
