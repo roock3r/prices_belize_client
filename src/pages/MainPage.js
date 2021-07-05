@@ -25,7 +25,7 @@ function Main() {
                                 </Typography>
                                 <img src={dollar} className="Main-logo" alt="logo"/>
                                 <Typography variant="h3" gutterBottom>
-                                    Find the lastest prices of essential goods and servies we use everyday.
+                                    Find the lastest prices of essential goods and services we use everyday.
                                 </Typography>
                                 <ArticleList articles={articles}/>
                             </Container>
