@@ -59,7 +59,7 @@ const ArticleDetail = ({classes, match}) => {
                     return(
                         <>
                             <Container maxWidth="lg">
-                                <div>{JSON.stringify(data)}</div>
+                                {/*<div>{JSON.stringify(data)}</div>*/}
 
                                 <Grid
                                     container
