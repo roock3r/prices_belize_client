@@ -7,6 +7,8 @@ import Loading from '../components/Shared/Loading';
 import '../css/Main.css';
 import {Container, Grid, Paper } from "@material-ui/core";
 import Typography from "@material-ui/core/Typography";
+import sortFunction from "../utils/dateSort";
+
 
 
 const data = {
@@ -56,6 +58,7 @@ const ArticleDetail = ({classes, match}) => {
                 {({data, loading, error}) => {
                     if (loading) return <Loading/>
                     if (error) return <Error error={error}/>
+                    console.log(data.article.articlepriceSet.sort(sortFunction))
                     return(
                         <>
                             <Container maxWidth="lg">
@@ -75,7 +78,7 @@ const ArticleDetail = ({classes, match}) => {
                                     </Grid>
                                     <Grid item>
                                         <Typography variant="h4" align="right" gutterBottom>
-                                            Current Price : $ {data.article.articlepriceSet[0].price}
+                                            Current Price : $ {data.article.articlepriceSet.sort(sortFunction)[0].price}
                                         </Typography>
                                     </Grid>
                                 </Grid>

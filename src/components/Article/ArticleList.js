@@ -13,12 +13,7 @@ import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import Chip from '@material-ui/core/Chip';
 import {Avatar} from "@material-ui/core";
 import DoneIcon from '@material-ui/icons/Done';
-
-
-// import AudioPlayer from "../Shared/AudioPlayer";
-// import LikeTrack from "./LikeTrack";
-// import DeleteTrack from "./DeleteTrack";
-// import UpdateTrack from "./UpdateTrack";
+import sortFunction from "../../utils/dateSort";
 
 
 const ArticleList = ({classes, articles}) => (
@@ -27,7 +22,6 @@ const ArticleList = ({classes, articles}) => (
             <ExpansionPanel key={article.id}>
                 <ExpansionPanelSummary expandIcon={<ExpandMoreIcon/>}>
                     <ListItem className={classes.root}>
-                        {/*<LikeTrack trackId={track.id} likeCount={track.likes.length}/>*/}
                         <ListItemText
                             primaryTypographyProps={{
                                 variant: "subheading",
@@ -39,22 +33,14 @@ const ArticleList = ({classes, articles}) => (
                                 {article.name}
                               </Link>
                             }
-                            // secondary={
-                            //   <Link to={`/profile/${track.postedBy.id}`}>
-                            //     {track.postedBy.username}
-                            //   </Link>
-                            // }
                         />
-
-                        {/*<AudioPlayer url={track.url}/>*/}
                         <>
                             Current Price:
                         <Chip
                             avatar={<Avatar>$</Avatar>}
-                            label={article.articlepriceSet[0].price}
+                            label={article.articlepriceSet.sort(sortFunction)[0].price}
                             clickable
                             color="primary"
-                            // onDelete={handleDelete}
                             deleteIcon={<DoneIcon/>}
                         />
                         </>
@@ -67,8 +53,6 @@ const ArticleList = ({classes, articles}) => (
                     </Typography>
                 </ExpansionPanelDetails>
                 <ExpansionPanelActions>
-                    {/*<UpdateTrack track={track}/>*/}
-                    {/*<DeleteTrack track={track}/>*/}
                 </ExpansionPanelActions>
             </ExpansionPanel>
         ))}
