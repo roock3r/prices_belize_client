@@ -75,9 +75,6 @@ const LineChart = ({priceSet, title}) => {
     };
 
     const [graphData, setGraphData] = useState(data)
-    const [dataTitle, setdataTitle] = useState("")
-
-
 
 
     useEffect(() => {
