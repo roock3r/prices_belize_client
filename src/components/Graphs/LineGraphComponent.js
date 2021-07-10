@@ -21,7 +21,7 @@ const LineChart = ({priceSet, title}) => {
 
 
     const options = {
-        responsive: true,
+        responsive: false,
         interaction: {
             mode: 'index',
             intersect: false,
@@ -29,7 +29,7 @@ const LineChart = ({priceSet, title}) => {
         plugins: {
             title: {
                 display: true,
-                text: `${title} Prices Line Chart`
+                text: `${title} Prices Per Gallon Line Chart`
             }
         },
         scales: {
@@ -42,7 +42,7 @@ const LineChart = ({priceSet, title}) => {
                 display: true,
                 title: {
                     display: true,
-                    text: 'Cost of Gallon In Belize Dollars',
+                    text: 'BZD $',
                     color: '#191',
                     font: {
                         family: 'Times',
