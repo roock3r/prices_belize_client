@@ -37,20 +37,22 @@ const ArticleDetail = ({classes, match}) => {
                                         </Typography>
                                     </Grid>
                                 </Grid>
+                                <br />
+                                <Paper >
+                                    <LineChart priceSet={data.article.articlepriceSet.sort(sortFunction)} title={data.article.name}/>
+                                </Paper>
+                                <br />
                                 <Grid container>
-                                    <Grid item>
-                                        <Typography variant="h4" align="right" gutterBottom>
-                                            {data.article.description}
-                                        </Typography>
                                         <Grid item>
                                             <Typography variant="h5" align="left" gutterBottom>
                                                 Category : {data.article.articlecategorySet[0].category}
                                             </Typography>
                                         </Grid>
-                                        <Paper >
-                                            <LineChart priceSet={data.article.articlepriceSet.sort(sortFunction)} title={data.article.name}/>
-                                        </Paper>
-                                    </Grid>
+                                        <Grid item>
+                                            <Typography variant="h4" align="right" gutterBottom>
+                                                {data.article.description}
+                                            </Typography>
+                                        </Grid>
                                 </Grid>
                             </Container>
                         </>

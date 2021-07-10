@@ -58,11 +58,11 @@ const LineChart = ({priceSet, title}) => {
                 title: {
                     display: true,
                     text: 'Date',
-                    color: '#911',
+                    color: '#191',
                     font: {
-                        family: 'Comic Sans MS',
+                        family: 'Times',
                         size: 20,
-                        weight: 'bold',
+                        weight: 'normal',
                         lineHeight: 1.2,
                     },
                     padding: {top: 20, left: 0, right: 0, bottom: 0}
