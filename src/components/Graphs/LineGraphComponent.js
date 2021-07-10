@@ -21,7 +21,7 @@ const LineChart = ({priceSet, title}) => {
 
 
     const options = {
-        responsive: false,
+        responsive: true,
         interaction: {
             mode: 'index',
             intersect: false,
