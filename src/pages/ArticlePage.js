@@ -1,55 +1,13 @@
 import React from "react";
 import {Query } from "react-apollo";
 import {gql} from "apollo-boost";
-import {Line} from 'react-chartjs-2';
 import Error from '../components/Shared/Error';
 import Loading from '../components/Shared/Loading';
 import '../css/Main.css';
 import {Container, Grid, Paper } from "@material-ui/core";
 import Typography from "@material-ui/core/Typography";
 import sortFunction from "../utils/dateSort";
-
-
-
-const data = {
-    labels: ['1', '2', '3', '4', '5', '6'],
-    datasets: [
-        {
-            label: '# of Votes',
-            data: [12, 19, 3, 5, 2, 3],
-            fill: false,
-            backgroundColor: 'rgb(255, 99, 132)',
-            borderColor: 'rgba(255, 99, 132, 0.2)',
-        },
-        // {
-        //     label: '# of Floats',
-        //     data: [10, 12, 9, 2, 1, 10],
-        //     fill: false,
-        //     backgroundColor: 'rgb(255, 99, 132)',
-        //     borderColor: 'rgba(255, 99, 132, 0.2)',
-        // },
-        // {
-        //     label: '# of Boats',
-        //     data: [2, 1, 8, 9, 2, 14],
-        //     fill: false,
-        //     backgroundColor: 'rgb(255, 99, 132)',
-        //     borderColor: 'rgba(255, 99, 132, 0.2)',
-        // },
-    ],
-};
-
-const options = {
-    scales: {
-        yAxes: [
-            {
-                ticks: {
-                    beginAtZero: true,
-                },
-            },
-        ],
-    },
-};
-
+import LineChart from "../components/Graphs/LineGraphComponent";
 
 const ArticleDetail = ({classes, match}) => {
     const article_id = match.params.id;
@@ -58,12 +16,9 @@ const ArticleDetail = ({classes, match}) => {
                 {({data, loading, error}) => {
                     if (loading) return <Loading/>
                     if (error) return <Error error={error}/>
-                    console.log(data.article.articlepriceSet.sort(sortFunction))
                     return(
                         <>
                             <Container maxWidth="lg">
-                                {/*<div>{JSON.stringify(data)}</div>*/}
-
                                 <Grid
                                     container
                                     direction="row"
@@ -93,7 +48,7 @@ const ArticleDetail = ({classes, match}) => {
                                             </Typography>
                                         </Grid>
                                         <Paper >
-                                            <Line data={data} options={options}/>
+                                            <LineChart priceSet={data.article.articlepriceSet.sort(sortFunction)} title={data.article.name}/>
                                         </Paper>
                                     </Grid>
                                 </Grid>
